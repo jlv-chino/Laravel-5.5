@@ -2,27 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*Route::get('/', function () {
+Route::resource('/productos', 'ProductosController');
+
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/post/{id}/{nombre}', function ($id, $nombre) {
-    return "post N° ". $id . "</br>" . "nombre: ". $nombre;
-});
+/*
+Route::get('/inicio', 'ProductosController@index');
 
-Route::get('/inicio/{id}', 'Ejemplo3Controller@index');
+Route::get('/crear', 'ProductosController@create');
 
-Route::get('/', "PaginasController@inicio");
-Route::get('/inicio', "PaginasController@inicio");
-Route::get('/quinesSomos', "PaginasController@quinesSomos");
-Route::get('/dondeEstamos', "PaginasController@dondeEstamos");
-Route::get('/foro', "PaginasController@foro");
+Route::get('/actualizar', 'ProductosController@update');
 
-Route::resource("posts", "Ejemplo3Controller");*/
+Route::get('/insertar', 'ProductosController@store');
 
-Route::get("/", "MiControlador@index");
-Route::get("/crear", "MiControlador@create");
-Route::get("/articulos", "MiControlador@store");
-Route::get("/mostrar", "MiControlador@show");
-Route::get("/contacto", "MiControlador@contactar");
-Route::get("/galeria", "MiControlador@galery");
+Route::get('/eliminar', 'ProductosController@destroy');*/
+
