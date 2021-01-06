@@ -40,6 +40,10 @@ class ProductosController extends Controller
 
         $producto=new Producto;
         $producto->NombreArticulo = $request->NombreArticulo;
+        $producto->Seccion = $request->Seccion;
+        $producto->Precio = $request->Precio;
+        $producto->Fecha = $request->Fecha;
+        $producto->PaisOrigen = $request->PaisOrigen;
         $producto->save();
         
     }

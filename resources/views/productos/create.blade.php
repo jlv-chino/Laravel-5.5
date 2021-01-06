@@ -1,18 +1,49 @@
 @extends('../layouts.plantilla')
 
 @section('cabecera')
-    
+
+    INSERTAR REGISTROS
+
 @endsection
 
 @section('contenido')
 
     <form action="/productos" method="POST">
 
-        <input type="text" name="NombreArticulo">
+        <table>
+            <tr>
+               <td>Nombre:</td>
+                
+               <td><input type="text" name="NombreArticulo">
+                  {{csrf_field()}}
+               </td>  
+            </tr>  
 
-        {{csrf_field()}}
+            <tr>
+                <td>Sección</td>
+                <td><input type="text" name="Seccion"></td>
+            </tr>
 
-        <input type="submit" value="Enviar" name="Enviar">
+            <tr>
+                <td>Precio</td>
+                <td><input type="text" name="Precio"></td>
+            </tr>
+
+            <tr>
+                <td>Fecha</td>
+                <td><input type="text" name="Fecha"></td>
+            </tr>
+
+            <tr>
+                <td>País de origen</td>
+                <td><input type="text" name="PaisOrigen"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Enviar" name="Enviar"></td> 
+                <td><input type="reset" value="Borrar" name="Borrar"></td> 
+            </tr>
+        </table>
 
     </form>
 
