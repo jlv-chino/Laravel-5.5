@@ -15,7 +15,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return "INICIO";
+        $productos=Producto::all();
+
+        return view ("productos.index", compact('productos'));
     }
 
     /**
@@ -56,7 +58,9 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        //
+       $producto=Producto::findOrFail($id);
+
+       return view ('productos.show', compact('producto'));
     }
 
     /**
@@ -67,7 +71,9 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto=Producto::findOrFail($id);
+
+        return view ('productos.edit', compact('producto'));
     }
 
     /**

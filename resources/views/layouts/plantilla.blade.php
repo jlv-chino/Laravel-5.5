@@ -19,8 +19,8 @@
             color: green;
         }
 
-        .contenido form{
-            width: 300px;
+        .contenido form, table{
+            width: 500px;
             margin:0 auto;
         }
 
