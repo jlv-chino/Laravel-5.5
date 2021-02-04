@@ -8,44 +8,42 @@
 
 @section('contenido')
 
-    <form action="/productos" method="POST">
+    {!! Form::open(['url' => '/productos', 'method' => 'POST']) !!}    
 
         <table>
             <tr>
-               <td>Nombre:</td>
-                
-               <td><input type="text" name="NombreArticulo">
+               <td>{!! Form::label('NombreArticulo', 'Nombre del artículo') !!}</td>
+               <td>{!! Form::text('NombreArticulo') !!}
                   {{csrf_field()}}
                </td>  
             </tr>  
 
             <tr>
-                <td>Sección</td>
-                <td><input type="text" name="Seccion"></td>
+                <td>{!! Form::label('Seccion', 'Sección') !!}</td>
+                <td>{!! Form::text('Seccion') !!}</td>
             </tr>
 
             <tr>
-                <td>Precio</td>
-                <td><input type="text" name="Precio"></td>
+                <td>{!! Form::label('Precio', 'Precio') !!}</td>
+                <td>{!! Form::text('Precio') !!}</td>
             </tr>
 
             <tr>
-                <td>Fecha</td>
-                <td><input type="text" name="Fecha"></td>
+                <td>{!! Form::label('Fecha', 'Fecha') !!}</td>
+                <td>{!! Form::text('Fecha') !!}</td>
             </tr>
 
             <tr>
-                <td>País de origen</td>
-                <td><input type="text" name="PaisOrigen"></td>
+                <td>{!! Form::label('PaisOrigen', 'País de origen') !!}</td>
+                <td>{!! Form::text('PaisOrigen') !!}</td>
             </tr>
 
             <tr>
-                <td><input type="submit" value="Enviar" name="Enviar"></td> 
-                <td><input type="reset" value="Borrar" name="Borrar"></td> 
+                <td>{!! Form::submit('Enviar') !!}</td> 
+                <td>{!! Form::reset('Borrar') !!}</td> 
             </tr>
         </table>
-
-    </form>
+    {!! Form::close() !!}    
 
 @endsection
 

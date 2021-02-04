@@ -8,7 +8,7 @@
 
 @section('contenido')
 
-    <form action="/productos/{{$producto->id}}" method="POST">
+    {!! Form::model($producto, ['method'=>'POST', 'action'=>['ProductosController@update', $producto->id]]) !!}    
 
         <table>
             <tr>
@@ -16,7 +16,6 @@
                 
                <td><input type="text" name="NombreArticulo" value="{{$producto->NombreArticulo}}">
                   {{csrf_field()}}
-                  <input type="hidden" name="_method" value="PUT">
                </td>  
             </tr>  
 
@@ -46,17 +45,17 @@
             </tr>
         </table>
 
-    </form>
+    {!! Form::close() !!}
 
-    <form action="/productos/{{$producto->id}}" method="post">  
-
+    {!! Form::open(['method'=>'DELETE', 'action'=>['ProductosController@destroy', $producto->id]]) !!}    
+     
     {{csrf_field()}}
 
     <input type="hidden" name="_method" value="DELETE">
 
     <input type="submit" value="Eliminar">
 
-    </form>
+    {!! Form::close() !!}
 
 @endsection
 
