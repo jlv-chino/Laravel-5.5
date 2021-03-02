@@ -40,6 +40,12 @@ class ProductosController extends Controller
     {
         //return view('productos.insert');
 
+        $this->validate($request, ['NombreArticulo'=>'required',
+                                   'Seccion'=>'required',
+                                   'Precio'=>'required',
+                                   'Fecha'=>'required',
+                                   'PaisOrigen'=>'required']);
+
         $producto=new Producto;
         $producto->NombreArticulo = $request->NombreArticulo;
         $producto->Seccion = $request->Seccion;
