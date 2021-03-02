@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Producto;
 
+use App\Http\Requests\CreateProductosRequest;
+
 class ProductosController extends Controller
 {
     /**
@@ -36,15 +38,15 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductosRequest $request)
     {
         //return view('productos.insert');
 
-        $this->validate($request, ['NombreArticulo'=>'required',
+       /* $this->validate($request, ['NombreArticulo'=>'required',
                                    'Seccion'=>'required',
                                    'Precio'=>'required',
                                    'Fecha'=>'required',
-                                   'PaisOrigen'=>'required']);
+                                   'PaisOrigen'=>'required']);*/
 
         $producto=new Producto;
         $producto->NombreArticulo = $request->NombreArticulo;
