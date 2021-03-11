@@ -10,5 +10,6 @@ class Producto extends Model
                             "Seccion",
                             "Precio",
                             "Fecha",
-                            "PaisOrigen"];
+                            "PaisOrigen",
+                            "ruta"];
 }

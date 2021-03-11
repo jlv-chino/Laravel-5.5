@@ -14,6 +14,7 @@
         <td>Precio</td>
         <td>Fecha</td>
         <td>País de Origen</td>
+        <td>Imagen</td>
     </tr>
         @foreach($productos as $producto)
             <tr>
@@ -22,6 +23,7 @@
                 <td>{{$producto->Precio}}</td>
                 <td>{{$producto->Fecha}}</td>
                 <td>{{$producto->PaisOrigen}}</td>
+                <td><img src="images/{{$producto->ruta}}" width="150"/></td>
             </tr>
         @endforeach
 </table>

@@ -40,21 +40,16 @@ class ProductosController extends Controller
      */
     public function store(CreateProductosRequest $request)
     {
-        //return view('productos.insert');
 
-       /* $this->validate($request, ['NombreArticulo'=>'required',
-                                   'Seccion'=>'required',
-                                   'Precio'=>'required',
-                                   'Fecha'=>'required',
-                                   'PaisOrigen'=>'required']);*/
+        $entrada = $request->all();
 
-        $producto=new Producto;
-        $producto->NombreArticulo = $request->NombreArticulo;
-        $producto->Seccion = $request->Seccion;
-        $producto->Precio = $request->Precio;
-        $producto->Fecha = $request->Fecha;
-        $producto->PaisOrigen = $request->PaisOrigen;
-        $producto->save();
+        if($archivo = $request->file('file')){
+            $nombre = $archivo->getClientOriginalName();
+            $archivo->move('images', $nombre);
+            $entrada['ruta'] = $nombre;
+        }
+
+        Producto::create($entrada);
         
     }
 

@@ -8,7 +8,15 @@
 
 @section('contenido')
 
-    {!! Form::open(['url' => '/productos', 'method' => 'POST']) !!}    
+    {!! Form::open(['url' => '/productos', 'method' => 'POST', 'files' => true]) !!}   
+    
+        <table>
+            <tr>
+                <td>
+                    {!! Form::file('file') !!}
+                </td>
+            </tr>
+        </table>
 
         <table>
             <tr>
